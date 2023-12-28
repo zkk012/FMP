@@ -1,0 +1,2 @@
+from library.model.sequential_recommender.bert4rec import BERT4Rec
+from library.model.sequential_recommender.fossil import FOSSIL
