@@ -3,3 +3,4 @@ loss_type: 'CE'                 # (str) The type of loss function. Range in ['BP
 reg_weight: 0.0                 # (float) The L2 regularization weight.
 order_len: 3                    # (int) The last N items.
 alpha: 0.6                      # (float) Weight parameter to calculate the similarity.
+epochs: 10                       # (int) The number of training epochs.

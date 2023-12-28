@@ -235,9 +235,9 @@ class Dataset(torch.utils.data.Dataset):
             else:
                 self.logger.info("Stop download.")
                 exit(-1)
-            torch.distributed.barrier()
-        else:
-            torch.distributed.barrier()
+            # torch.distributed.barrier()
+        # else:
+            # torch.distributed.barrier()
 
     def _load_data(self, token, dataset_path):
         """Load features.
@@ -275,8 +275,10 @@ class Dataset(torch.utils.data.Dataset):
         """
         if self.benchmark_filename_list is None:
             inter_feat_path = os.path.join(dataset_path, f"{token}.inter")
-            if not os.path.isfile(inter_feat_path):
-                raise ValueError(f"File {inter_feat_path} not exist.")
+            print("Download Success.")
+            # if not os.path.isfile(inter_feat_path):
+                # raise ValueError(f"File {inter_feat_path} not exist.")
+
 
             inter_feat = self._load_feat(inter_feat_path, FeatureSource.INTERACTION)
             self.logger.debug(

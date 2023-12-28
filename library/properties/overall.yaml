@@ -2,7 +2,7 @@
 gpu_id: '0'                     # (str) The id of GPU device(s).
 worker: 0                       # (int) The number of workers processing the data.
 use_gpu: True                   # (bool) Whether or not to use GPU.
-seed: 2022                      # (int) Random seed.
+seed: 2020                      # (int) Random seed.
 state: INFO                     # (str) Logging level.
 reproducibility: True           # (bool) Whether or not to make results reproducible.
 data_path: 'dataset/'           # (str) The path of input dataset.
@@ -17,16 +17,16 @@ wandb_project: 'library'        # (str) The project to conduct experiments in W&
 shuffle: True                   # (bool) Whether or not to shuffle the training data before each epoch.
 
 # Training Settings
-epochs: 300                     # (int) The number of training epochs.
+#epochs: 300                     # (int) The number of training epochs.
 train_batch_size: 2048          # (int) The training batch size.
 learner: adam                   # (str) The name of used optimizer.
 learning_rate: 0.001            # (float) Learning rate.
-train_neg_sample_args:          # (dict) Negative sampling configuration for model training.
-  distribution: uniform         # (str) The distribution of negative items.
-  sample_num: 1                 # (int) The sampled num of negative items.
-  alpha: 1.0                    # (float) The power of sampling probability for popularity distribution.
-  dynamic: False                # (bool) Whether to use dynamic negative sampling.
-  candidate_num: 0              # (int) The number of candidate negative items when dynamic negative sampling.
+#train_neg_sample_args:          # (dict) Negative sampling configuration for model training.
+#  distribution: uniform         # (str) The distribution of negative items.
+#  sample_num: 1                 # (int) The sampled num of negative items.
+#  alpha: 1.0                    # (float) The power of sampling probability for popularity distribution.
+#  dynamic: False                # (bool) Whether to use dynamic negative sampling.
+#  candidate_num: 0              # (int) The number of candidate negative items when dynamic negative sampling.
 eval_step: 1                    # (int) The number of training epochs before an evaluation on the valid dataset.
 stopping_step: 10               # (int) The threshold for validation-based early stopping.
 clip_grad_norm: ~               # (dict) The args of clip_grad_norm_ which will clip gradient norm of model. 
@@ -36,7 +36,7 @@ require_pow: False              # (bool) Whether or not to perform power operati
 enable_amp: False               # (bool) Whether or not to use mixed precision training.
 enable_scaler: False            # (bool) Whether or not to use GradScaler in mixed precision training.
 transform: ~                    # (str) The transform operation for batch data process.
-loss_type: 'CE'                 # (str) Type of loss function
+#loss_type: 'CE'                 # (str) Type of loss function
 
 # Evaluation Settings
 eval_args:                      # (dict) 4 keys: group_by, order, split, and mode
@@ -47,7 +47,7 @@ eval_args:                      # (dict) 4 keys: group_by, order, split, and mod
 repeatable: False               # (bool) Whether to evaluate results with a repeatable recommendation scene. 
 metrics: ["Recall","NDCG","Hit"]  # (list or str) Evaluation metrics.
 topk: [10]                      # (list or int or None) The value of k for topk evaluation metrics.
-valid_metric: NDCG@10            # (str) The evaluation metric for early stopping.
+valid_metric: Recall@10            # (str) The evaluation metric for early stopping.
 valid_metric_bigger: True       # (bool) Whether to take a bigger valid metric value as a better result.
 eval_batch_size: 4096           # (int) The evaluation batch size.
 metric_decimal_place: 4         # (int) The decimal place of metric scores.
