@@ -2,11 +2,6 @@
 
 The library requires Python version 3.8 or later and torch version 1.7.0 or later.
 
-### Install  from source
-```bash
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
-```
-
 ### Install environments
 ```bash
 pip install -e . --verbose
